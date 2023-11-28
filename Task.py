@@ -1,56 +1,70 @@
-print('Hello, this is an interactable task editor that resembles a piece of paper. Please note that its not all powerful and will help with everyday tasks.')
+import textwrap
 
-class Task_editor():
-    Task_List1 = [{'ID':1,'Task name':'Brush teeth','Status':'uncompleted','key word':'brush'},
-                       {'ID':2,'Task name':'Shower','Status':'Uncompleted','Key word':'Showar'},
-                       {'ID':3,'Task name':'Eat breakfast','Status':'uncompleted','Key word':'PPMD'}]
-    def __init__(self, ID, Task_name, Status, key_word):
+class Task:
+    def __init__(self, ID, Task_name, key_word):
         self.ID = ID
         self.Task_name = Task_name
-        self.Status = Status
+        self.Status = 'uncompleted'
         self.key_word = key_word
-
-
-    def ABC_value():
-    
-
-
-    def ID_Value():
-
-
-
-    def Altering_Task_List():
-
-
-
-    def Add_Tasks():
-        if Input_Task == 'ADDTASK':
-
-
-
-    def Remove_Tasks():
-
-
-
-    def Mark_Up_task():
-
-
-
-    def Search_Task():
-    
-
-
-    def Undo_Action():
-
-
-
-class Display(Task_editor):
-
-    def Screen_And_input():
-        
-
-
-
-
-
-{'ID':,'Task name':'','Status':'','Key word':''}
+class TaskList:
+    def __init__(self):
+        self.tasks = [
+            Task(1, 'Brush teeth', 'brush'),
+            Task(2, 'Shower', 'shower'),
+            Task(3, 'Eat breakfast', 'PPMD')]
+    def add_task(self, task_name, key_word):
+        new_id = len(self.tasks) + 1
+        new_task = Task(new_id, task_name, key_word)
+        self.tasks.append(new_task)
+    def display_tasks(self):
+        screen_width = 50
+        screen_height = 30
+        task_list_width = 30 
+        print("Task List:")
+        total_lines_needed = sum(len(textwrap.fill(f"{task.ID}. {task.Task_name} ({task.Status}): {task.key_word}", width=task_list_width).split('\n')) for task in self.tasks)
+        start_row = max((screen_height - total_lines_needed) // 2, 0)
+        for task in self.tasks:
+            task_info = f"{task.ID}. {task.Task_name} ({task.Status}): {task.key_word}"
+            wrapped_task = textwrap.fill(task_info, width=task_list_width)
+            lines = wrapped_task.split('\n')
+            for i in range(start_row, start_row + len(lines)):
+                print(lines[i - start_row].center(screen_width))
+            start_row += len(lines)
+        print('-' * screen_width)  
+    def edit_task(self, key_word):
+        for task in self.tasks:
+            if task.key_word.lower() == key_word.lower():
+                print(f"Editing Task {task.ID}: {task.Task_name}")
+                new_name = input("Enter the new task name: ")
+                new_key_word = input("Enter the new key word: ")
+                new_status = input("Enter the new status (e.g., completed, in progress, uncompleted): ")
+                task.Task_name = new_name
+                task.key_word = new_key_word
+                task.Status = new_status
+                print(f"Task {task.ID} edited successfully.")
+        print(f"Task with key word '{key_word}' not found.")
+def main():
+    task_list = TaskList()
+    while True:
+        print("Options:")
+        print("1. Add Task")
+        print("2. Display Tasks")
+        print("3. Edit Task")
+        print("4. Quit")
+        choice = input("Enter your choice (1/2/3/4): ")
+        if choice == "1":
+            task_name = input("Enter the task name: ")
+            key_word = input("Enter the key word: ")
+            task_list.add_task(task_name, key_word)
+        elif choice == "2":
+            task_list.display_tasks()
+        elif choice == "3":
+            key_word = input("Enter the key word of the task to edit: ")
+            task_list.edit_task(key_word)
+        elif choice == "4":
+            print("Exiting program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, 3, or 4.")
+if __name__ == "__main__":
+    main()
