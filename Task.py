@@ -12,6 +12,9 @@ class TaskList:
             Task(1, 'Brush teeth', 'brush'),
             Task(2, 'Shower', 'shower'),
             Task(3, 'Eat breakfast', 'PPMD')]
+    def Del_Task(self):
+        
+        self.tasks.pop(int())
     def add_task(self, task_name, key_word):
         new_id = len(self.tasks) + 1
         new_task = Task(new_id, task_name, key_word)
@@ -50,7 +53,9 @@ def main():
         print("1. Add Task")
         print("2. Display Tasks")
         print("3. Edit Task")
-        print("4. Quit")
+        print("4. Delete Task")
+        print("5. Undo last action")
+        print("6. Quit")
         choice = input("Enter your choice (1/2/3/4): ")
         if choice == "1":
             task_name = input("Enter the task name: ")
@@ -61,10 +66,13 @@ def main():
         elif choice == "3":
             key_word = input("Enter the key word of the task to edit: ")
             task_list.edit_task(key_word)
-        elif choice == "4":
+        elif choice == '4':
+            key_word = input("Enter the key word of the task you would like to delete: ")
+            task_list.Del_Task(key_word)
+        elif choice == "6":
             print("Exiting program. Goodbye!")
             break
         else:
-            print("Invalid choice. Please enter 1, 2, 3, or 4.")
+            print("Invalid choice. Please enter 1, 2, 3, 4, 5, or 6.")
 if __name__ == "__main__":
     main()
