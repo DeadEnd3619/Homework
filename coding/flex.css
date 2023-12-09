@@ -1,0 +1,58 @@
+body{
+    width:90%;
+    max-width: 0;
+    margin: 0 auto;
+    font: 0.9em/1.5em "helvetica";
+    background-image: url(./sun-tornado.svg);
+    background-size: cover;
+}
+.box{
+    float: left;
+    margin-right: 1rem;
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: rgb(207, 232, 220);
+    padding: 1em;
+}
+.special{
+    z-index: 5;
+    background-color: rgb(79, 185, 227);
+    padding: 10px;
+    color: white;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.cleared{
+    clear:left;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.pik_one{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+li a:hover {
+    background-color: grey;
+
+}
+li a {
+    display: block;
+    padding: 10px 10px;
+    
+}
+
+
+
+
+
+
+
+
+
+

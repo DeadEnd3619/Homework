@@ -1,0 +1,42 @@
+.body{
+    display: grid;
+    grid-template-columns: [Start] 1fr [column-1] 1fr [column-2] 1fr [column-3] 1fr [column-4] 1fr [column-5] 1fr [column-6] 1fr [column-7] 1fr [column-8] 1fr [End];
+    grid-template-rows: [Start] 1fr [row-1] 1fr [row-2] 1fr [row-3] 1fr [row-4] 1fr [row-5] 1fr [row-6] 1fr [row-7] 1fr [row-8] 1fr [End];
+    gap: 4px;
+    padding: 4px;
+    background-color: grey;
+}
+.Navbar ul{
+    list-style-type: none;
+}
+.Navbar{
+    grid-column: Start / column-2;
+    grid-row: row-1 / row-8;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(226, 218, 218);
+}
+.Searchbar{
+    grid-column: column-4 / End;
+    grid-row: Start / row-1;
+    height: 100%;
+    width: 100%;
+}
+.Footer{
+    grid-column: column-1 / End;
+    grid-row: row-8 / End;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
