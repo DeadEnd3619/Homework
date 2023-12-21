@@ -4,7 +4,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: rgb(98, 37, 37);
 }
-
 .navbar {
     background-color: green;
     border-radius: 10px;
@@ -14,32 +13,32 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
 .nav-link {
     color: red;
     text-decoration: none;
 }
-
 .main-content {
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
 }
-
 .gallery-item {
     width: calc(33.33% - 10px);
     margin: 5px;
     overflow: hidden;
     border-radius: 5px;
+    position: relative; /* Add position relative to allow absolute positioning of the description */
 }
-
 .gallery-item img {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
-
-.gallery-item p {
+.gallery-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: #e74c3c;
     color: white;
     padding: 10px;
