@@ -7,20 +7,24 @@ let questions = [
     ['"Pac-Man" was released in the 1980s. True or False?', 'True'],
     ['In "Super Mario Bros.," Marios brother is named Luigi. True or False?', 'True'],
     ['"Fortnite" is a game that features a battle royale mode. True or False?', 'True'],
-    ['The iconic yellow character in "Pac-Man" is called Blinky. True or False?'], 'True',
+    ['The iconic yellow character in "Pac-Man" is called Blinky. True or False?', 'True'],
     ['"Angry Birds" is a mobile game where birds are launched at structures. True or False?', 'True']
 ]
 let score = 0
 let popUp, question
+
+
 //Above is where is create my variables. 
 
 
-for (question in questions){
+for (question of questions){
     let input = prompt(question[0])
-    if (input = question[1]){
+    if (input == question[1]){
         score++
+    }else if(input.length == 0){
+        alert('Please type in a vaild responce')
     }else{
-        pass
+        null
     }
 }
 
@@ -45,6 +49,5 @@ if (score <= 6){
 
 alert(popUp + '\nYou got a ' + score + ' out of 10!')
 
+
 //This displays the final score after the quiz is completed with a message then on the next line the final score
-
-
