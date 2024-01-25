@@ -1,0 +1,77 @@
+body{
+    
+
+
+}
+.calcBody{
+    grid-template-columns: [Start] 1fr [column-1] 1fr [column-2] 1fr [column-3] 1fr [column-4] 1fr [column-5] 1fr [column-6] 1fr [column-7] 1fr [column-8] 1fr [End];
+    grid-template-rows: [Start] 1fr [row-1] 1fr [row-2] 1fr [row-3] 1fr [row-4] 1fr [row-5] 1fr [row-6] 1fr [row-7] 1fr [row-8] 1fr [End];
+    background-color: red;
+}
+.screen{
+    grid-row: ;
+    grid-column: ;
+    background-color: black;
+}
+.operations{
+    grid-row: ;
+    grid-column: ;
+    background-color: silver;
+
+}
+
+.calc0{
+    border-radius: ;
+}
+
+.calc1{
+    border-radius: ;
+}
+
+.calc2{
+    border-radius: ;
+}
+
+.calc3{
+    border-radius: ;
+}
+
+.calc4{
+    border-radius: ;
+}
+
+.calc5{
+    border-radius: ;
+}
+
+.calc6{
+    border-radius: ;
+}
+
+.calc7{
+    border-radius: ;
+}
+
+.calc8{
+    border-radius: ;
+}
+
+.calc9{
+    border-radius: ;
+}
+
+.calcAdd{
+    border-radius: ;
+}
+
+.calcSubtract{
+    border-radius: ;
+}
+
+.calcMultiply{
+    border-radius: ;
+}
+
+.calcDevide{
+    border-radius: ;
+}
