@@ -1,0 +1,89 @@
+.Grid{
+    display: grid;
+    grid-template-columns: [Start] 1fr [column-1] 1fr [column-2] 1fr [column-3] 1fr [column-4] 1fr [column-5] 1fr [column-6] 1fr [column-7] 1fr [column-8] 1fr [End];
+    grid-template-rows: [Start] 1fr [row-1] 1fr [row-2] 1fr [row-3] 1fr [row-4] 1fr [row-5] 1fr [row-6] 1fr [row-7] 1fr [row-8] 1fr [End];
+    gap: 4px;
+    padding: 4px;
+    background-color: grey;
+}
+.mainBackground{
+    background-color: teal;
+    grid-column: column-2 / column-7 ;
+    grid-row: row-2 / row-7;
+}
+.box1{
+    grid-column: / ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box2{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box3{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box4{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box5{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box6{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box7{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box8{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.box9{
+    grid-column:  /  ;
+    grid-row:  /  ;
+    width: 100%;
+    height: 100%;
+}
+.winScore{
+
+}
+.winStreak{
+
+}
+.playerOneScore{
+
+}
+.playerTwoScore{
+
+}
+.playerStreak{
+
+}
+
+
+
+
+
+
+
