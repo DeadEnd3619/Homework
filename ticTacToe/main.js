@@ -1,5 +1,7 @@
 var playBoard = [0,0,0,0,0,0,0,0,0],playerTurn = 'Player one',turnXO = 'X',winningPos = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]],turns = 0,game = true, formerTurn = 'X', winningPlayer = ''
-document.getElementById('player').innerHTML = playerTurn
+document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('player').innerHTML = playerTurn
+})
 function getBoardPos(playBoardPos){
     var index = playBoardPos - 1
     if (playerTurn == 'Player one'){
@@ -24,13 +26,14 @@ function doPlayerAction(index){
         let i1 = i[0], i2 = i[1], i3 = i[2];
         if (boolBoard[i1] && boolBoard[i2] && boolBoard[i3]){
             if (playBoard[i1] == playBoard[i2] && playBoard[i2] == playBoard[i3]){
-                console.log('winner');
                 game = false;
                 winningPlayer = playBoard[i1]
                 doHTMLEdit(index, 2)
             }}}
     if (turns == 9 && game == true){
-        console.log('Tie')}}
+        game = false
+        winningPlayer = 'Tie'
+    doHTMLEdit(index, 2)}}
 function doHTMLEdit(index, condition){
     if (condition == 1){
     document.getElementById(index + 1).innerHTML = turnXO
@@ -45,8 +48,11 @@ function doHTMLEdit(index, condition){
         }else{
             winningPlayer = 'Player two'
         }
+        if (winningPlayer == 'Tie'){
+            ocument.getElementById('player').innerHTML = "It's a tie"
+        }else{
         document.getElementById('player').innerHTML = `${winningPlayer} has won`
-    }}
+    }}}
 
 
 
