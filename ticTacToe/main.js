@@ -49,7 +49,7 @@ function doHTMLEdit(index, condition){
             winningPlayer = 'Player two'
         }
         if (winningPlayer == 'Tie'){
-            ocument.getElementById('player').innerHTML = "It's a tie"
+            document.getElementById('player').innerHTML = "It's a tie"
         }else{
         document.getElementById('player').innerHTML = `${winningPlayer} has won`
     }}}

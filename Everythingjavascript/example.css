@@ -1,4 +1,4 @@
 .gridBase{
-    grid-template-columns: ;
-    grid-template-rows: ;
+    grid-template-columns: [col-1] 1fr [col-2] 1fr [col-3] 45px [col-4] 1fr [col-5] 45px [col-6] 1fr [col-7] 1fr [col-8];
+    grid-template-rows: [col-1] 1fr [col-2] 1fr [col-3] 45px [col-4] 1fr [col-5] 45px [col-6] 1fr [col-7] 1fr [col-8];
 }
