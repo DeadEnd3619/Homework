@@ -1,77 +1,123 @@
-body{
-    
-
-
-}
 .calcBody{
+    display: grid;
     grid-template-columns: [Start] 1fr [column-1] 1fr [column-2] 1fr [column-3] 1fr [column-4] 1fr [column-5] 1fr [column-6] 1fr [column-7] 1fr [column-8] 1fr [End];
-    grid-template-rows: [Start] 1fr [row-1] 1fr [row-2] 1fr [row-3] 1fr [row-4] 1fr [row-5] 1fr [row-6] 1fr [row-7] 1fr [row-8] 1fr [End];
-    background-color: red;
+    grid-template-rows: [Start] 100px [row-1] 100px [row-2] 100px [row-3] 100px [row-4] 100px [row-5] 100px [row-6] 100px [row-7] 100px [row-8] 100px [End];
+    background-color: rgb(171, 28, 28);
+    gap: 4px;
+    padding: 4px;
 }
 .screen{
-    grid-row: ;
-    grid-column: ;
-    background-color: black;
+    grid-row: 3 / 4;
+    grid-column: 2 / 8;
+    background-color: rgb(153, 151, 151);
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
-.operations{
-    grid-row: ;
-    grid-column: ;
-    background-color: silver;
-
+.operationsBackground{
+    grid-row: 4 / 9;
+    grid-column: 2 / 8;
+    background-color: rgb(0, 0, 0);
+    padding-left: 4px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+    border-radius: 10px;
 }
 
 .calc0{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 7 / 8;
+    grid-column: 3 / 4;
 }
 
 .calc1{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
 }
 
 .calc2{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 4 / 5;
+    grid-column: 3 / 4;
 }
 
 .calc3{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 4 / 5;
+    grid-column: 4 / 5;
 }
 
 .calc4{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 5 / 6;
+    grid-column: 2 / 3;
 }
 
 .calc5{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 5 / 6;
+    grid-column: 3 / 4;
 }
 
 .calc6{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 5 / 6;
+    grid-column: 4 / 5;
 }
 
 .calc7{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 6 / 7;
+    grid-column: 2 / 3;
 }
 
 .calc8{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 6 / 7;
+    grid-column: 3 / 4;
 }
 
 .calc9{
-    border-radius: ;
+    border-radius: 10px;
+    background-color: magenta;
+    grid-row: 6 / 7;
+    grid-column: 4 / 5;
 }
 
 .calcAdd{
     border-radius: ;
+    background-color: ;
+    grid-row: ;
+    grid-column: ;
 }
 
 .calcSubtract{
     border-radius: ;
+    background-color: ;
+    grid-row: ;
+    grid-column: ;
 }
 
 .calcMultiply{
     border-radius: ;
+    background-color: ;
+    grid-row: ;
+    grid-column: ;
 }
 
-.calcDevide{
+.calcDivide{
     border-radius: ;
+    background-color: ;
+    grid-row: ;
+    grid-column: ;
 }
