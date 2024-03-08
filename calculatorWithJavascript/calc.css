@@ -1,16 +1,17 @@
-.calcBody{
+.calcBody {
     display: grid;
-    grid-template-columns: [Start] 1fr [column-1] 1fr [column-2] 1fr [column-3] 1fr [column-4] 1fr [column-5] 1fr [column-6] 1fr [column-7] 1fr [column-8] 1fr [column-9] 1fr [End];
+    grid-template-columns: repeat(11, 1fr); 
     grid-template-rows: [Start] 90px [row-1] 90px [row-2] 90px [row-3] 90px [row-4] 90px [row-5] 90px [row-6] 90px [row-7] 90px [row-8] 90px [End];
     background-color: rgb(210, 87, 39);
     font-family: Arial, sans-serif;
+    grid-gap: 2px; 
 }
 
 .screen{
     grid-row: 3 / 4;
     grid-column: 4 / 8;
     background-color: rgb(153, 151, 151);
-    border-radius: 25px;
+    border-radius: 15px;
     margin: 5px;
 }
 
@@ -27,6 +28,7 @@
     grid-row: 7 / 8;
     grid-column: 5 / 6;
     margin: 3px;
+    margin-bottom: 8px;
     text-align: center;
     line-height: 75px;
     font-size: 50px;
@@ -41,6 +43,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-left: 8px;
 }
 
 .calc2{
@@ -74,6 +77,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-left: 8px;
 }
 
 .calc5{
@@ -107,6 +111,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-left: 8px;
 }
 
 .calc8{
@@ -140,6 +145,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-right: 8px;
 }
 
 .calcSubtract{
@@ -151,6 +157,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-right: 8px;
 }
 
 .calcMultiply{
@@ -162,6 +169,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-right: 8px;
 }
 
 .calcDivide{
@@ -173,6 +181,8 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 .cs{
     border-radius: 10px;
@@ -183,6 +193,8 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-bottom: 8px;
+    margin-left: 8px;
 }
 
 .equals{
@@ -194,6 +206,7 @@
     text-align: center;
     line-height: 75px;
     font-size: 50px;
+    margin-bottom: 8px;
 }
 #button{
     transition: background-color 300ms;
