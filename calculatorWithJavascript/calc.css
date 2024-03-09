@@ -5,6 +5,8 @@
     background-color: rgb(210, 87, 39);
     font-family: Arial, sans-serif;
     grid-gap: 2px; 
+    font-size: 50px;
+    min-width: 1fr;
 }
 
 .screen{
@@ -34,7 +36,6 @@
     margin-bottom: 8px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calc1{
@@ -45,7 +46,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-left: 8px;
 }
 
@@ -57,7 +57,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calc3{
@@ -68,7 +67,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calc4{
@@ -79,7 +77,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-left: 8px;
 }
 
@@ -91,7 +88,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calc6{
@@ -102,7 +98,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calc7{
@@ -113,7 +108,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-left: 8px;
 }
 
@@ -125,7 +119,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calc9{
@@ -136,7 +129,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calcAdd{
@@ -147,7 +139,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calcSubtract{
@@ -158,7 +149,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 40px;
 }
 
 .calcMultiply{
@@ -169,7 +159,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calcDivide{
@@ -180,7 +169,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-bottom: 8px;
 }
 .cs{
@@ -191,7 +179,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-bottom: 8px;
     margin-left: 8px;
 }
@@ -204,7 +191,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-bottom: 8px;
 }
 
@@ -216,7 +202,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-bottom: 8px;
     margin-right: 8px;
 }
@@ -229,7 +214,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calcCos{
@@ -240,7 +224,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calcTan{
@@ -251,7 +234,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
 }
 
 .calcNatLog{
@@ -262,7 +244,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-right: 8px;
 }
 
@@ -274,7 +255,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-right: 8px;
 }
 
@@ -286,7 +266,6 @@
     margin: 3px;
     text-align: center;
     line-height: 55px;
-    font-size: 50px;
     margin-right: 8px;
 }
 
@@ -298,7 +277,6 @@
     margin: 3px;
     text-align: center;
     line-height: 75px;
-    font-size: 50px;
     margin-bottom: 8px;
 }
 
@@ -308,4 +286,10 @@
 
 #button:hover {
     background-color: red;
+}
+
+@media screen and (max-width: 600px){
+    .calcBody{
+        font-size: 25px;
+    }
 }
