@@ -1,0 +1,6 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(9, 90px);
+  gap: 3px;
+}/*# sourceMappingURL=sass.css.map */
