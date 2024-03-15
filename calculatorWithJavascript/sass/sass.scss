@@ -1,9 +1,41 @@
 $m : magenta;
+@use "sass:string";
+$gc:(
+    "centerCol1" : 5,
+    "centerCol2" : 6,
+    "centerRow1" : 4,
+    "centerRow2" : 5
+);
+@function gmk($name, $value){
+    @return map-get($name, $value)
+};
+@function repeat($i, $name, $value){
+    
+};
+
+
 body{
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(9, 90px);
-    gap: 3px;
+    gap: 2px;
+    .row1{
+        $i : -3;
+        @while ($i >= 3){
+            div{
+                background-color: $m;
+                grid-column: repeat($i, );
+                grid-row: '';
+                $i : $i + 1
+            }
+        }
+    }
+    .row2{
+
+    }
+    .row3{
+
+    }
 }
 
 
