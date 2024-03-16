@@ -1,5 +1,4 @@
-$m : magenta;
-@use "sass:string";
+$m : magenta;$w : '1';
 $gc:(
     "centerCol1" : 5,
     "centerCol2" : 6,
@@ -7,13 +6,8 @@ $gc:(
     "centerRow2" : 5
 );
 @function gmk($name, $value){
-    @return map-get($name, $value)
+    @return map-get($map: $name, $key: $value)
 };
-@function repeat($i, $name, $value){
-    
-};
-
-
 body{
     display: grid;
     grid-template-columns: repeat(11, 1fr);
@@ -22,19 +16,44 @@ body{
     .row1{
         $i : -3;
         @while ($i >= 3){
-            div{
+            div#{$i}{
                 background-color: $m;
-                grid-column: repeat($i, );
-                grid-row: '';
-                $i : $i + 1
+                grid-column-start: gmk($gc, 'centerCol1') - $i;
+                grid-column-end: gmk($gc, 'centerCol2') - $i;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                padding: 3px;
             }
+            $i : $i + 1
         }
     }
     .row2{
-
+        $i : -3;
+        @while ($i >= 3){
+            div#{$i}{
+                background-color: $m;
+                grid-column-start: gmk($gc, 'centerCol1') - $i;
+                grid-column-end: gmk($gc, 'centerCol2') - $i;
+                grid-row-start: 4;
+                grid-row-end: 5;
+                padding: 3px;
+            }
+            $i : $i + 1
+        }
     }
     .row3{
-
+        $i : -3;
+        @while ($i >= 3){
+            div#{$i}{
+                background-color: $m;
+                grid-column-start: gmk($gc, 'centerCol1') - $i;
+                grid-column-end: gmk($gc, 'centerCol2') - $i;
+                grid-row-start: 5;
+                grid-row-end: 6;
+                padding: 3px;
+            }
+            $i : $i + 1
+        }
     }
 }
 
