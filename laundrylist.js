@@ -6,10 +6,14 @@
 // let i=3,prime=[2],userInput=4049,going=true;while(going){let primeCheck=0;if(userInput==1){console.log(`${userInput} is not a prime number`);}else{for(let j of prime){if(i%j==0){primeCheck++;break;}}if(primeCheck==0){prime.push(i);}}if(i==userInput){going=false;}else{i++;}}if(prime.includes(userInput)){console.log(`${userInput} is a prime number`);}else{console.log(`${userInput}is not a prime number`);}
 // let i=3,prime=[2],going=true;while(going){let primeCheck=0;if(i==1){console.log(`1 is not a prime number`);}else{for(let j of prime){if(i%j==0){primeCheck++;break;}}if(primeCheck==0){prime.push(i);}}if(i==100){going=false;}else{i++;}}console.log(prime)
 // let userInput=6,sum=1,i=1;while(i<=userInput){sum *= i;i++;}console.log(sum);
-let input = [30, 412], i = input.min()
-while (going){
+
+
+
+
+// let input = [30, 412], i = input.min()
+// while (going){
   
-}
+// }
 
 
 

@@ -1,58 +1,89 @@
-$m : magenta;$w : '1';
-$gc:(
-    "centerCol1" : 5,
-    "centerCol2" : 6,
-    "centerRow1" : 4,
-    "centerRow2" : 5
+$m: magenta;
+$w: "1";
+$gc: (
+    "centerCol1": 5,
+    "centerCol2": 6,
+    "centerRow1": 4,
+    "centerRow2": 5,
 );
+<<<<<<< Updated upstream
+@function gmk($name, $value) {
+    @return map-get($map: $name, $key: $value);
+}
+body {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(9, 90px);
+    gap: 2px;}
+$r: 0; $c: 1; $w: 1;
+@while ($r <= 3) {
+    @while ($c <= 6) {
+        body:nth-child(#{$w}) {
+            background-color: $m;
+            grid-column-start: gmk($gc, "centerCol1") - $c;
+            grid-column-end: gmk($gc, "centerCol2") - $c;
+            grid-row-start: 3 + $r;
+            grid-row-end: 4 + $r;
+            padding: 3px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 50px;
+=======
 @function gmk($name, $value){
-    @return map-get($map: $name, $key: $value)
+    @return map-get($name, $value)
 };
+@function col($i, $value1, $value2){
+    
+}
+@function row($r, $value1, $value2){
+
+}
+
 body{
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(9, 90px);
     gap: 2px;
     .row1{
-        $i : -3;
+        $i : -3;$r : -1;
         @while ($i >= 3){
-            div#{$i}{
+            div{
                 background-color: $m;
-                grid-column-start: gmk($gc, 'centerCol1') - $i;
-                grid-column-end: gmk($gc, 'centerCol2') - $i;
-                grid-row-start: 3;
-                grid-row-end: 4;
-                padding: 3px;
+                grid-column: col($i, gmk($gc, 'centerCol1'), gmk($gc, 'centerCol2'));
+                grid-row: row($r, gmk($gc, 'centerRow1'), gmk($gc, 'centerRow2'));
+                $i : $i + 1;
             }
-            $i : $i + 1
+>>>>>>> Stashed changes
         }
+        $c: $c + 1;
+        $w: $w + 1;
     }
+<<<<<<< Updated upstream
+    $r: $r + 1;
+    $c: 1;
+}
+=======
     .row2{
-        $i : -3;
+        $i : -3;$r : 0;
         @while ($i >= 3){
-            div#{$i}{
+            div{
                 background-color: $m;
-                grid-column-start: gmk($gc, 'centerCol1') - $i;
-                grid-column-end: gmk($gc, 'centerCol2') - $i;
-                grid-row-start: 4;
-                grid-row-end: 5;
-                padding: 3px;
+                grid-column: col($i, gmk($gc, 'centerCol1'), gmk($gc, 'centerCol2'));
+                grid-row: '';
+                $i : $i + 1;
             }
-            $i : $i + 1
         }
+
     }
     .row3{
-        $i : -3;
+        $i : -3;$r : 1;
         @while ($i >= 3){
-            div#{$i}{
+            div{
                 background-color: $m;
-                grid-column-start: gmk($gc, 'centerCol1') - $i;
-                grid-column-end: gmk($gc, 'centerCol2') - $i;
-                grid-row-start: 5;
-                grid-row-end: 6;
-                padding: 3px;
+                grid-column: col($i, gmk($gc, 'centerCol1'), gmk($gc, 'centerCol2'));
+                grid-row: '';
+                $i : $i + 1;
             }
-            $i : $i + 1
         }
     }
 }
@@ -67,3 +98,4 @@ body{
 
 
 
+>>>>>>> Stashed changes
