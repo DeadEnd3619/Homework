@@ -3,10 +3,14 @@ body{
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     gap: 6px;
-    back
+    background-color: aquamarine;
 }
 .cardArea{
-
+    grid-column-start: 3;
+    grid-column-end: 8;
+    grid-row-start: 3;
+    grid-row-end: 8;
+    background-color: chocolate;
 }
 
 .card{
@@ -15,11 +19,17 @@ body{
 $n : 1;
 @while ($n <= 16){
     .card#{$n}-1{
-
+        grid-column-start: ;
+        grid-column-end: ;
+        grid-row-start: ;
+        grid-row-end: ;
     }
 
     .card#{$n}-2{
-
+        grid-column-start: ;
+        grid-column-end: ;
+        grid-row-start: ;
+        grid-row-end: ;
     }
     $n : $n + 1;
 }
