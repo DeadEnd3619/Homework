@@ -1,0 +1,49 @@
+@import "partials/_list.scss";
+
+$main: magenta;
+$font-Stack: Helvetcica, sans-serif;
+$border-color: orange;
+
+body{
+    display: flex;
+    flex-direction: row;
+    background-color: $main;
+    border-radius: 10px;
+    border: 1px solid $border-color;
+    section{
+        width: 300px;
+        height: 400px;
+        background-color: $main;
+        padding: {
+            top: 5px;
+            right: 0px;
+            left: 50px;
+        };
+    }display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    button{
+        background-color: $main;
+        border: 2px button $border-color;
+        border-radius: 10px;
+        height: 25px;
+        margin: 5px;
+        outline: none;
+
+        &:active{
+            border-color: lightcoral;
+            border: 2px solid $main;
+        }}
+        #submit{
+            justify-content: flex-end;
+            align-self: flex-end;
+        }
+        #testing{
+            justify-content: flex-start;
+            align-self: flex-start;
+        }
+
+}
+
+
+

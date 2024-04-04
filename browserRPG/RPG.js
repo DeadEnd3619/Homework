@@ -18,8 +18,9 @@ let keyLogger = function (Key) {
     }
 };
 let keyActtion = function (key) {
-    if
-    $('#player').on(buttonDown, key)
+    if (key == 'w') {
+        $('#player')
+    }
 }
 
 window.addEventListener("keydown", (e) => {
