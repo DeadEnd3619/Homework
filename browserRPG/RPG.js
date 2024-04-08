@@ -17,9 +17,8 @@ let keyLogger = function (Key) {
         }
     }
 };
-let keyActtion = function (key) {
-    if
-    $('#player').on(buttonDown, key)
+let keyAction = function (key) {
+    
 }
 
 window.addEventListener("keydown", (e) => {
@@ -38,7 +37,7 @@ async function game() {
         await sleep(Math.max(0, 1000 / 30 - elapsedTime));
         lastKey =  keyLog[keyLog.length - 1][0]
         canLogInput = true;
-        keyActtion(lastKey)
+        keyAction(lastKey)
         pressedKey = "";
         elapsedTime = Date.now() - startTime;
     }

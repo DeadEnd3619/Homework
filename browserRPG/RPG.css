@@ -1,7 +1,8 @@
 body {
   display: flex;
 }
-body div {
+#player{
+  position: relative;
   align-items: center;
   justify-items: center;
   background-color: aqua;
