@@ -1,0 +1,1 @@
+body{display:grid;grid-template-columns:repeat(120, 10px);grid-template-rows:repeat(60, 10px)}.wall{background-color:gray}#player{background-color:#7fffd4;grid-column-start:60;grid-column-end:61;grid-row-start:30;grid-row-end:31;position:relative}/*# sourceMappingURL=index.min.css.map */
