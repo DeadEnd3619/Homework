@@ -6,7 +6,7 @@ $gc: (
     "centerRow1": 4,
     "centerRow2": 5,
 );
-<<<<<<< Updated upstream
+
 @function gmk($name, $value) {
     @return map-get($map: $name, $key: $value);
 }
@@ -28,7 +28,6 @@ $r: 0; $c: 1; $w: 1;
             text-align: center;
             line-height: 75px;
             font-size: 50px;
-=======
 @function gmk($name, $value){
     @return map-get($name, $value)
 };
@@ -53,7 +52,6 @@ body{
                 grid-row: row($r, gmk($gc, 'centerRow1'), gmk($gc, 'centerRow2'));
                 $i : $i + 1;
             }
->>>>>>> Stashed changes
         }
         $c: $c + 1;
         $w: $w + 1;
@@ -62,40 +60,3 @@ body{
     $r: $r + 1;
     $c: 1;
 }
-=======
-    .row2{
-        $i : -3;$r : 0;
-        @while ($i >= 3){
-            div{
-                background-color: $m;
-                grid-column: col($i, gmk($gc, 'centerCol1'), gmk($gc, 'centerCol2'));
-                grid-row: '';
-                $i : $i + 1;
-            }
-        }
-
-    }
-    .row3{
-        $i : -3;$r : 1;
-        @while ($i >= 3){
-            div{
-                background-color: $m;
-                grid-column: col($i, gmk($gc, 'centerCol1'), gmk($gc, 'centerCol2'));
-                grid-row: '';
-                $i : $i + 1;
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes

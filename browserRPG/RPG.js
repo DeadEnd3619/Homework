@@ -1,46 +1,34 @@
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-let Game = true;
-let pressedKey = "";
-let canLogInput = true;
-let keyLog = [[]];
-let lastKey
-let keyLogger = function (Key) {
-    const previousKey = keyLog[keyLog.length - 1];
-    if (previousKey !== Key) {
-        if (Array.isArray(previousKey) && previousKey[0] === Key) {
-            previousKey[1]++;
-            console.log(keyLog);
-        } else {
-            keyLog.push([Key, 1]);
-            console.log(keyLog);
-        }
+let keyAction = function (key) {
+    if (key == 'w') {
+        $('#player').animate({top: "-=10px"}, 33); 
+    } else if (key == 's') {
+        $('#player').animate({top: "+=10px"}, 33);
+    } else if (key == 'a') {
+        $('#player').animate({left: "-=10px"}, 33); 
+    } else if (key == 'd') {
+        $('#player').animate({left: "+=10px"}, 33); 
     }
 };
-let keyAction = function (key) {
-    
-}
 
-window.addEventListener("keydown", (e) => {
+$(document).on("keydown", (e) => {
     if (canLogInput) {
-        pressedKey = e.key;
-        console.log(pressedKey);
+        console.log(e.key);
         canLogInput = false;
-        keyLogger(pressedKey);
+        keyAction(e.key);
     }
 });
 
-async function game() {
-    let startTime, elapsedTime;
-    while (Game) {
-        startTime = Date.now();
-        await sleep(Math.max(0, 1000 / 30 - elapsedTime));
-        lastKey =  keyLog[keyLog.length - 1][0]
-        canLogInput = true;
-        keyAction(lastKey)
-        pressedKey = "";
-        elapsedTime = Date.now() - startTime;
-    }
-}
+// async function game() {
+//     let startTime, elapsedTime;
+//     while (Game) {
+//         startTime = Date.now();
+//         await sleep(Math.max(0, 1000 / 30 - elapsedTime));
+//         lastKey =  keyLog[keyLog.length - 1][0];
+//         canLogInput = true;
+//         pressedKey = "";
+//         elapsedTime = Date.now() - startTime;
+//     }
+// }
 
-game();
+// game();

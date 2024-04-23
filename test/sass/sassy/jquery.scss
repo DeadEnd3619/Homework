@@ -1,0 +1,72 @@
+$color: #000000;
+$panal-bg: rgb(44, 125, 255);
+$panal-color: #ffffff;
+$font: sans-serif;
+
+@mixin flexCenter($direction, $justify){
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: $direction;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+.header{
+    @include flexCenter(row, center);
+    background-color: lightgray;
+    padding: 30px 0px;
+    margin: 8px 0px;
+    h1{
+        flex: 100%;
+        text-align: center;
+    }
+    button {
+        padding: 8px 3px;
+    }
+    border: 1px gray solid;
+    font-weight: bold;
+    outline: none;
+
+    &:active{
+        background: linear-gradient(white, gray);
+    }
+}
+
+[class*="xs"]{
+    width: 20%;
+}
+
+
+.row{
+    width: 90%;
+    margin: auto;
+    @include flexCenter(row, space-around);
+    .panel{
+        border: $panal-bg 2px solid;
+        *{
+            @include flexCenter(row, none);
+            padding: 8px;
+        }
+        .panel-heading{
+            min-height: 2rem;
+            background: $panal-bg;
+            color: $panal-color;
+        }
+        .panel-body{
+            height: 4rem;
+        }
+    }
+}
+
+
+
+
+
+
