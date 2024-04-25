@@ -1,8 +1,9 @@
-body {
+.grid {
   display: grid;
   grid-template-columns: repeat(120, 10px);
   grid-template-rows: repeat(60, 10px);
   border: 2px solid black;
+  margin: 0;
 }
 
 .wall {
@@ -11,9 +12,9 @@ body {
 
 #player {
   background-color: aquamarine;
-  grid-column-start: 60;
-  grid-column-end: 61;
-  grid-row-start: 30;
-  grid-row-end: 31;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
   position: relative;
 }/*# sourceMappingURL=index.css.map */
