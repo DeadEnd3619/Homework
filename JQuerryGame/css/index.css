@@ -2,6 +2,7 @@ body {
   display: grid;
   grid-template-columns: repeat(120, 10px);
   grid-template-rows: repeat(60, 10px);
+  border: 2px solid black;
 }
 
 .wall {
