@@ -1,137 +1,146 @@
 $(document).ready(function() {
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-    let playerX = 1;
-    let playerY = 5;
-    let playerPOS = [playerX, playerY];
-    let Game = true
+    let playerPOS = [3, 3];
+    let Game = true;
     let input = true;
-    let gameBoard = [[1,1,1,1,1,1,1],[1,0,0,0,0,2,1],[1,0,0,0,0,0,1],[1,0,0,0,0,0,1],[1,0,0,0,0,0,1],[1,0,0,0,0,0,1],[1,0,0,0,0,0,1],[1,1,1,1,1,1,1]]
+    let gameBoard = [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],//botom of screen to top of screen         Very Left of screen
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+        [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]//                                         very right of screen
+    ];
 
-    
-
-    let values
 
     $(document).on("keydown", (e) => {
-        if (input){
-        console.log(e.key);
-        inputCheck(e.key);
-    }});
-
+        if (input) {
+            console.log(e.key);
+            inputCheck(e.key);
+        }
+    });
 
     $(document).on("keyup", (e) => {
         input = true;
-    })
+    });
 
-
-    
-
-    let inputCheck = function(key){
-
-        switch(key){
+    let inputCheck = function(key) {
+        switch (key) {
             case 'w':
             case 'W':
             case 'ArrowUp':
-                values = colsionCheck('up')
-                if (playerY <= 1){break;}
-                else {
-                    $('#player').animate({top: "-=10px"}, 100);
-                    playerY = playerY - 1;
-                    input = false;
-                    playerPOS = [playerX, playerY];
-                    console.log(playerPOS);
-                    values = []
-                    break;
-                }
+                movePlayer('up');
+                break;
+
             case 'a':
             case 'A':
             case 'ArrowLeft':
-                values = colsionCheck('left')
-                if (playerX <= 1){break;}
-                else {
-                    $('#player').animate({left: "-=10px"}, 100);
-                    playerX = playerX - 1;
-                    input = false;
-                    playerPOS = [playerX, playerY];
-                    console.log(playerPOS);
-                    values = []
-                    break;
-                }
+                movePlayer('left');
+                break;
+
             case 's':
             case 'S':
             case 'ArrowDown':
-                values = colsionCheck('down')
-                if (values[4]){break;}
-                else {
-                    $('#player').animate({top: "+=10px"}, 100);
-                    playerY = playerY + 1;
-                    input = false;
-                    playerPOS = [playerX, playerY];
-                    console.log(playerPOS);
-                    values = []
-                    break;
-                }
+                movePlayer('down');
+                break;
+
             case 'd':
             case 'D':
             case 'ArrowRight':
-                values = colsionCheck('right')
-                if (playerX >= 120){break;}
-                else {
-                $('#player').animate({left: "+=10px"}, 100);
-                playerX = playerX + 1;
-                input = false;
-                playerPOS = [playerX, playerY];
-                console.log(playerPOS);
-                values = []
+                movePlayer('right');
                 break;
-        }}
-    }
+        }
+    };
 
+    let movePlayer = function(direction) {
+        let future;
+        let squares = 0;
 
-    let colsionCheck = function(direction){
-        let values = []
-        let squares = 0
-        switch(direction){
-        case 'up':
-        case 'down':
-            values.push('top');
-            break;
-        
-        case 'left':
-        case 'right':
-            values.push('left')
-            break;}
-
-        switch(direction){
-            case 'left':
+        switch (direction) {
             case 'up':
-                values.push('-=');
+                future = [playerPOS[0], playerPOS[1] - 1];
+                while (gameBoard[future[0]][future[1]] === 0) {
+                    squares++;
+                    future = [future[0], future[1] - 1];
+                }
+                playerPOS = [playerPOS[0], playerPOS[1] - squares];
+                console.log(playerPOS);
+                $('#player').animate({ top: `-=${squares * 10}px` }, 100);
                 break;
-
-            case 'right':
             case 'down':
-                values.push('+=');
-                break;}
-         
-            
-            
-}
+                future = [playerPOS[0], playerPOS[1] + 1];
+                while (gameBoard[future[0]][future[1]] === 0) {
+                    squares++;
+                    future = [future[0], future[1] + 1];
+                }
+                playerPOS = [playerPOS[0], playerPOS[1] + squares];
+                console.log(playerPOS);
+                $('#player').animate({ top: `+=${squares * 10}px` }, 100);
+                break;
+            case 'left':
+                future = [playerPOS[0] - 1, playerPOS[1]];
+                while (gameBoard[future[0]][future[1]] === 0) {
+                    squares++;
+                    future = [future[0] - 1, future[1]];
+                }
+                playerPOS = [playerPOS[0] - squares, playerPOS[1]];
+                console.log(playerPOS);
+                $('#player').animate({ left: `-=${squares * 10}px` }, 100);
+                break;
+            case 'right':
+                future = [playerPOS[0] + 1, playerPOS[1]];
+                while (gameBoard[future[0]][future[1]] === 0) {
+                    squares++;
+                    future = [future[0] + 1, future[1]];
+                }
+                playerPOS = [playerPOS[0] + squares, playerPOS[1]];
+                console.log(playerPOS);
+                $('#player').animate({ left: `+=${squares * 10}px` }, 100);
+                break;
+        }
+    };
+    let checkWin = function() {
+        if (playerPOS[0] === 15 && playerPOS[1] === 7) {
+            return true;
+        }else{
+        return false;
+        }}
 
-
-        
-
-
-    let game = async function(){
+    let game = async function() {
         while (Game) {
             await sleep(100);
             input = true;
-    }};
+            if (checkWin() === true){
+                Game = false;
+                console.log('you win');
+            }
+        }
+        console.log('game over');
+    };
 
-
-
-
-
-
-
-
+    console.log(gameBoard.length);
+    console.log(gameBoard[0].length);
     game();
 });
