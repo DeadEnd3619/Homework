@@ -4,36 +4,49 @@ $(document).ready(function() {
     let Game = true;
     let input = true;
     let gameBoard = [
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],//botom of screen to top of screen         Very Left of screen
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
-        [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]//                                         very right of screen
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // 0          Very Left of screen 
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1], // 1
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 2
+        [1, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 3
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 4
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 5
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 6
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 7
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 8
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 9
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 10
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 11
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 12
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 13
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 14
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 15
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 16
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 17
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 18
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 19
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 20
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 21
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 22
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 23
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 24
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 25
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 26
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 27
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  // 28            very right of screen
     ];
-
+    
+    let x = 1;
+    for (let i of gameBoard) {
+        let y = 1;
+        for (let j of i) {
+            if (j == 1) {
+                $("body").append(`<div class="wall" style="grid-column: ${x} / ${x + 1 }; grid-row: ${y} / ${y + 1};"></div>`);
+            }
+            y++;
+        }
+        x++;
+    }
+    
 
     $(document).on("keydown", (e) => {
         if (input) {
@@ -81,42 +94,46 @@ $(document).ready(function() {
         switch (direction) {
             case 'up':
                 future = [playerPOS[0], playerPOS[1] - 1];
-                while (gameBoard[future[0]][future[1]] === 0) {
+                while (gameBoard[future[0]][future[1]] !== 1) {
                     squares++;
                     future = [future[0], future[1] - 1];
                 }
                 playerPOS = [playerPOS[0], playerPOS[1] - squares];
                 console.log(playerPOS);
+                
                 $('#player').animate({ top: `-=${squares * 10}px` }, 100);
                 break;
             case 'down':
                 future = [playerPOS[0], playerPOS[1] + 1];
-                while (gameBoard[future[0]][future[1]] === 0) {
+                while (gameBoard[future[0]][future[1]] !== 1) {
                     squares++;
                     future = [future[0], future[1] + 1];
                 }
                 playerPOS = [playerPOS[0], playerPOS[1] + squares];
                 console.log(playerPOS);
+                
                 $('#player').animate({ top: `+=${squares * 10}px` }, 100);
                 break;
             case 'left':
                 future = [playerPOS[0] - 1, playerPOS[1]];
-                while (gameBoard[future[0]][future[1]] === 0) {
+                while (gameBoard[future[0]][future[1]] !== 1) {
                     squares++;
                     future = [future[0] - 1, future[1]];
                 }
                 playerPOS = [playerPOS[0] - squares, playerPOS[1]];
                 console.log(playerPOS);
+                
                 $('#player').animate({ left: `-=${squares * 10}px` }, 100);
                 break;
             case 'right':
                 future = [playerPOS[0] + 1, playerPOS[1]];
-                while (gameBoard[future[0]][future[1]] === 0) {
+                while (gameBoard[future[0]][future[1]] !== 1) {
                     squares++;
                     future = [future[0] + 1, future[1]];
                 }
                 playerPOS = [playerPOS[0] + squares, playerPOS[1]];
                 console.log(playerPOS);
+                
                 $('#player').animate({ left: `+=${squares * 10}px` }, 100);
                 break;
         }
@@ -125,13 +142,12 @@ $(document).ready(function() {
         if (playerPOS[0] === 15 && playerPOS[1] === 7) {
             return true;
         }else{
-        return false;
+            return false;
         }}
 
     let game = async function() {
         while (Game) {
             await sleep(100);
-            input = true;
             if (checkWin() === true){
                 Game = false;
                 console.log('you win');

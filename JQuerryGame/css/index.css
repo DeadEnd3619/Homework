@@ -1,27 +1,18 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(27, 10px);
-  grid-template-rows: repeat(10, 10px);
-  border: 2px solid black;
-  margin: 0;
+  grid-template-columns: repeat(29, 10px);
+  grid-template-rows: repeat(14, 10px);
 }
 
 #player {
   background-color: aquamarine;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
   position: relative;
 }
 
 .wall {
   background-color: grey;
-}
-
-#wall1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 5;
 }/*# sourceMappingURL=index.css.map */
