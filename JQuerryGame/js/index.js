@@ -1,51 +1,48 @@
 $(document).ready(function() {
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-    let playerPOS = [3, 3];
     let Game = true;
     let input = true;
-    let gameBoard = [
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // 0          Very Left of screen 
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1], // 1
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 2
-        [1, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 3
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 4
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 5
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 6
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 7
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 8
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 9
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 10
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 11
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 12
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 13
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 14
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 15
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 16
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 17
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 18
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 19
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 20
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 21
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 22
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 23
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 24
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 25
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 26
-        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], // 27
-        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  // 28            very right of screen
-    ];
     
+    let playerPOS
+    let winningPOS
+
+    const fs = require('fs');
+    const text = fs.readFileSync('../jquerrygame/js/levels.js', 'utf8');
+    console.log(text);
+
+    let GameStart = function (gameBoard) {
+    let gridCol = gameBoard.length
+    let gridRow = gameBoard[0].length
+
+    $('body').append(`<div class="grid" style="display:grid;grid-template-columns:repeat(${gridCol}, 10px);grid-template-rows:repeat(${gridRow}, 10px)"></div>`)
+
+
+
     let x = 1;
     for (let i of gameBoard) {
         let y = 1;
         for (let j of i) {
             if (j == 1) {
-                $("body").append(`<div class="wall" style="grid-column: ${x} / ${x + 1 }; grid-row: ${y} / ${y + 1};"></div>`);
+                $(".grid").append(`<div class="wall" style="grid-column: ${x} / ${x + 1 }; grid-row: ${y} / ${y + 1};"></div>`);
+            }
+            if (j == 2) {
+                if (winningPOS == undefined) {
+                    $(".grid").append(`<div class="winning" style="grid-column: ${x} / ${x + 1 }; grid-row: ${y} / ${y + 1};"></div>`);
+                    winningPOS = [x - 1, y - 1];}
+            }
+            if (j == 9) {
+                if (playerPOS == undefined) {
+                $(".grid").append(`<div id="player" style="grid-column: ${x} / ${x + 1}; grid-row: ${y} / ${y + 1};"></div>`);
+                playerPOS = [x - 1, y - 1];}
             }
             y++;
         }
         x++;
     }
+    console.log(gameBoard.length);
+    console.log(gameBoard[0].length);
+}
+    GameStart(gameBoard);
     
 
     $(document).on("keydown", (e) => {
@@ -139,7 +136,7 @@ $(document).ready(function() {
         }
     };
     let checkWin = function() {
-        if (playerPOS[0] === 15 && playerPOS[1] === 7) {
+        if (playerPOS[0] === winningPOS[0] && playerPOS[1] === winningPOS[1]) {
             return true;
         }else{
             return false;
@@ -149,14 +146,21 @@ $(document).ready(function() {
         while (Game) {
             await sleep(100);
             if (checkWin() === true){
-                Game = false;
                 console.log('you win');
+                killAllDivs();
+                break;
             }
         }
         console.log('game over');
+        playerPOS = undefined;
+        winningPOS = undefined;
     };
 
-    console.log(gameBoard.length);
-    console.log(gameBoard[0].length);
+    let killAllDivs = function() {
+        var divs = document.getElementsByTagName('div');
+        for (var i = divs.length - 1; i >= 0; i--) {
+            divs[i].parentNode.removeChild(divs[i]);
+        }
+    }
     game();
 });
