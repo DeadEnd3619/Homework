@@ -252,28 +252,63 @@ let countGenders = function(users){
     return true
 }
 
-let filterIPByRange = function(start, users, end){
-    let range = [start.split('.'), end.split('.')]
-    let usersWithIPInRange = []
-    // console.log(range);
+let filterIPByRange = function(start, users, end) {
+    //Create a range and a list to hold users that fit within range.
+    let range = [start.split('.').map(Number), end.split('.').map(Number)];
+    let usersWithIPInRange = [];
+
+    //Loop through all users and check if their IP falls within the provided range.
+
     users.forEach(user => {
-        let userIP = user.split('.')
-        if (userIP < range[0][0]){
-            // console.log('IP is less than start range');
-        }
-        else if (userIP > range[1][0]){
-            // console.log('IP is greater than end range');
-        }
-        else if (userIP == range[0][0] || userIP == range[1][0]){
-            usersWithIPInRange.push(userIP.toString('.'))
-        }
-    })
+        let userIP = user.ip_address.split('.').map(Number);  
 
-    return true
-}
+        if (userIP[0] < range[0][0] || userIP[0] > range[1][0]) {
+            // console.log(`IP is out of range for user ${user.id}`);
+        } else if (userIP[0] === range[0][0] || userIP[0] === range[1][0]) {
+            // console.log(`IP matches start or end range for user ${user.id}`);
+            usersWithIPInRange.push({id: user.id, ip: user.ip_address});
+        } else {
+            usersWithIPInRange.push({id: user.id, ip: user.ip_address});
+        }
+    });
 
+    //log or return users within range
+
+    // console.log(usersWithIPInRange);
+    return true;
+};
+
+
+
+
+let getFullInitials = function(users) {
+    // Create an empty array to hold the full names with initials.
+    let fullNames = [];
+    
+    // Loop through the list of users to create strings with full names and initials.
+    for (let x of users) {
+        let arr = `${x.first_name} ${x.last_name} (${x.first_name.charAt(0)}${x.last_name.charAt(0)})`;
+        // console.log(x); 
+        // console.log(arr); 
+        fullNames.push(arr); 
+    }
+
+    // Log or return the array of full names with initials.
+    console.log(fullNames);
+    return true;
+};
 
 let runAllPrograms = function(userData){
+    if (userData.length == 0){
+        console.log('Input data is empty');
+        return false;
+    }
+    userData.forEach(function(user){
+    if (user.id == null || user.first_name == null || user.last_name == null || user.email == null || user.gender == null || user.ip_address == null){
+        console.log('error');
+        return false;
+    }})
+
     if (getFullNames(userData)){
         console.log('getFullNames Ran correctly');
     }
@@ -292,11 +327,17 @@ let runAllPrograms = function(userData){
     else{
         console.log('countGenders Ran incorrectly');
     }
-    if (filterIPByRange('400.0.0.0', inputData, '600.0.0.0')){
+    if (filterIPByRange('150.0.0.0', userData, '200.0.0.0')){
         console.log('filterIPByRange Ran correctly');
     }
     else{
         console.log('filterIPByRange Ran incorrectly');
+    }
+    if (getFullInitials(userData)){
+        console.log('getFullNames ran correctly');
+    }
+    else{
+        console.log('getFullNames ran incorrectly');
     }
 
 }
