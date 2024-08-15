@@ -238,18 +238,39 @@ let getEmailProviders = function(users){
     return true
 }
 
+// This function below count the number of genders in the user data, and returns/logs the ammount of unique genders
 
 let countGenders = function(users){
-    genderCount = {
+    let genderCount = {
     }
-    for (let x of users){
-        console.log(x.gender);
-        if (x.gender)
-    }
-    console.log(genderCount);
+    //forEach loop to create or add to a gender
+    users.forEach(user => {
+        genderCount[user.gender] ? genderCount[user.gender]++ : genderCount[user.gender] = 1
+    })
+    //log or return gender
+    // console.log(genderCount);
     return true
 }
 
+let filterIPByRange = function(start, users, end){
+    let range = [start.split('.'), end.split('.')]
+    let usersWithIPInRange = []
+    // console.log(range);
+    users.forEach(user => {
+        let userIP = user.split('.')
+        if (userIP < range[0][0]){
+            // console.log('IP is less than start range');
+        }
+        else if (userIP > range[1][0]){
+            // console.log('IP is greater than end range');
+        }
+        else if (userIP == range[0][0] || userIP == range[1][0]){
+            usersWithIPInRange.push(userIP.toString('.'))
+        }
+    })
+
+    return true
+}
 
 
 let runAllPrograms = function(userData){
@@ -266,10 +287,18 @@ let runAllPrograms = function(userData){
         console.log('getEmailProviders Ran incorrectly');
     }
     if (countGenders(userData)){
+        console.log('countGenders Ran correctly');
     }
     else{
         console.log('countGenders Ran incorrectly');
     }
+    if (filterIPByRange('400.0.0.0', inputData, '600.0.0.0')){
+        console.log('filterIPByRange Ran correctly');
+    }
+    else{
+        console.log('filterIPByRange Ran incorrectly');
+    }
+
 }
 
 runAllPrograms(inputData)
